@@ -1,0 +1,32 @@
+<div id="invoices" class="page active">
+        <div class="table-container">
+          <div class="table-header">
+            <input type="text" class="search-box" id="invoiceSearch" placeholder="Search invoices..." data-i18n-placeholder="search.invoices">
+            <div class="table-filters">
+              <select class="select-filter" id="invoiceStatusFilter">
+                <option value="all">All status</option>
+                <option value="Paid">Paid</option>
+                <option value="Pending">Pending</option>
+                <option value="Overdue">Overdue</option>
+              </select>
+              <button class="btn-add" onclick="app.exportCSV('invoices')"><i class="fas fa-file-csv"></i> Export CSV</button>
+              <button class="btn-add" onclick="app.openModal('add', 'invoices')"><i class="fas fa-plus"></i> Add Invoice</button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th onclick="app.sortTable('invoices', 0)">ID <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('invoices', 1)">Customer <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('invoices', 2)">Amount <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('invoices', 3)">Date <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('invoices', 4)">Status <i class="fas fa-sort"></i></th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="invoicesTableBody"></tbody>
+          </table>
+          <div class="pagination" id="invoicesPagination"></div>
+        </div>
+      </div>

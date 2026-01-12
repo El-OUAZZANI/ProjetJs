@@ -1,0 +1,29 @@
+<div id="products" class="page active">
+        <div class="table-container">
+          <div class="table-header">
+            <input type="text" class="search-box" id="productSearch" placeholder="Search products..." data-i18n-placeholder="search.products">
+            <div class="table-filters">
+              <select class="select-filter" id="productCategoryFilter">
+                <option value="all">All categories</option>
+              </select>
+              <button class="btn-add" onclick="app.exportCSV('products')"><i class="fas fa-file-csv"></i> Export CSV</button>
+              <button class="btn-add" onclick="app.openModal('add', 'products')"><i class="fas fa-plus"></i> Add Product</button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th onclick="app.sortTable('products', 0)">ID <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('products', 1)">Image <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('products', 2)">Title <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('products', 3)">Price <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('products', 4)">Category <i class="fas fa-sort"></i></th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody"></tbody>
+          </table>
+          <div class="pagination" id="productsPagination"></div>
+        </div>
+      </div>

@@ -1,0 +1,78 @@
+<div id="dashboard" class="page active">
+        <div class="dashboard-toolbar">
+          <div class="toolbar-group">
+            <label data-i18n="dash.filter.user">User</label>
+            <select id="dashUserFilter"></select>
+          </div>
+          <div class="toolbar-group">
+            <label data-i18n="dash.filter.status">Status</label>
+            <select id="dashStatusFilter">
+              <option value="all">All</option>
+              <option value="Pending">Pending</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+          <div class="toolbar-group">
+            <label data-i18n="dash.filter.period">Period</label>
+            <select id="dashPeriodFilter">
+              <option value="all">All</option>
+              <option value="30">Last 30 days</option>
+              <option value="90">Last 90 days</option>
+              <option value="180">Last 180 days</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-info"><h3 id="totalUsers">0</h3><p data-i18n="stats.users">Utilisateurs totaux</p></div>
+            <div class="stat-icon icon-primary"><i class="fas fa-users"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info"><h3 id="totalProducts">0</h3><p data-i18n="stats.products">Produits totaux</p></div>
+            <div class="stat-icon icon-success"><i class="fas fa-box"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info"><h3 id="totalOrders">0</h3><p data-i18n="stats.orders">Commandes totales</p></div>
+            <div class="stat-icon icon-warning"><i class="fas fa-shopping-cart"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info"><h3 id="pendingOrders">0</h3><p data-i18n="stats.pending">Commandes en attente</p></div>
+            <div class="stat-icon icon-muted"><i class="fas fa-hourglass-half"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info"><h3 id="overdueInvoices">0</h3><p data-i18n="stats.overdue">Factures en retard</p></div>
+            <div class="stat-icon icon-danger"><i class="fas fa-triangle-exclamation"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info"><h3 id="totalRevenue">$0</h3><p data-i18n="stats.revenue">Revenu total</p></div>
+            <div class="stat-icon icon-secondary"><i class="fas fa-dollar-sign"></i></div>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="chart-card"><h3 data-i18n="charts.orderTrend">Orders Trend (line)</h3><canvas id="lineChart"></canvas></div>
+          <div class="chart-card"><h3 data-i18n="charts.orderStatus">Order Status (pie)</h3><canvas id="pieChart"></canvas></div>
+          <div class="chart-card"><h3 data-i18n="charts.monthlyRevenue">Monthly Revenue (bar)</h3><canvas id="barChart"></canvas></div>
+          <div class="chart-card"><h3 data-i18n="charts.categoryDistribution">Category Distribution (donut)</h3><canvas id="donutChart"></canvas></div>
+          <div class="chart-card"><h3 data-i18n="charts.scatter">Orders Scatter (scatter)</h3><canvas id="scatterChart"></canvas></div>
+        </div>
+
+        <div class="dash-widgets">
+          <div class="widget">
+            <h3 data-i18n="dash.recentOrders">Recent Orders</h3>
+            <div id="recentOrders" class="mini-list"></div>
+          </div>
+
+          <div class="widget">
+            <h3 data-i18n="dash.topProducts">Top Products</h3>
+            <div id="topProducts" class="mini-list"></div>
+          </div>
+        </div>
+      </div>

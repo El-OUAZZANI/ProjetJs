@@ -1,0 +1,25 @@
+<div id="customers" class="page active">
+        <div class="table-container">
+          <div class="table-header">
+            <input type="text" class="search-box" id="customerSearch" placeholder="Search customers..." data-i18n-placeholder="search.customers">
+            <div class="table-filters">
+              <button class="btn-add" onclick="app.exportCSV('customers')"><i class="fas fa-file-csv"></i> Export CSV</button>
+              <button class="btn-add" onclick="app.openModal('add', 'customers')"><i class="fas fa-plus"></i> Add Customer</button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th onclick="app.sortTable('customers', 0)">ID <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('customers', 1)">Name <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('customers', 2)">Email <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('customers', 3)">Phone <i class="fas fa-sort"></i></th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="customersTableBody"></tbody>
+          </table>
+          <div class="pagination" id="customersPagination"></div>
+        </div>
+      </div>

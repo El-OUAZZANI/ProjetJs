@@ -1,0 +1,33 @@
+<div id="orders" class="page active">
+        <div class="table-container">
+          <div class="table-header">
+            <input type="text" class="search-box" id="orderSearch" placeholder="Search orders..." data-i18n-placeholder="search.orders">
+            <div class="table-filters">
+              <select class="select-filter" id="orderStatusFilter">
+                <option value="all">All status</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+              <button class="btn-add" onclick="app.exportCSV('orders')"><i class="fas fa-file-csv"></i> Export CSV</button>
+              <button class="btn-add" onclick="app.openModal('add', 'orders')"><i class="fas fa-plus"></i> Add Order</button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th onclick="app.sortTable('orders', 0)">ID <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('orders', 1)">User <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('orders', 2)">Products <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('orders', 3)">Total <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('orders', 4)">Status <i class="fas fa-sort"></i></th>
+                <th onclick="app.sortTable('orders', 5)">Date <i class="fas fa-sort"></i></th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody"></tbody>
+          </table>
+          <div class="pagination" id="ordersPagination"></div>
+        </div>
+      </div>
