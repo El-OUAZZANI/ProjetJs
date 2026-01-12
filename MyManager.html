@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyManager - Backoffice</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+   <link href="MyManager.css" rel="stylesheet">
+     
+  <!-- Chargement des fichiers JS séparés -->
+  <script src="js/main.js"></script>
+  <script src="js/data-service.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/table-manager.js"></script>
+  <script src="js/details-manager.js"></script>
+  <script src="js/crud-manager.js"></script>
+  <script src="js/exports.js"></script>
+</head>
+
+<body>
+  <!-- LOGIN -->
+  <div id="loginPage" class="login-container">
+    <div class="login-box">
+      <h2 data-i18n="login.title">Connexion MyManager</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label data-i18n="login.username">Nom d'utilisateur</label>
+          <input type="text" id="username" value="admin" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="login.password">Mot de passe</label>
+          <input type="password" id="password" value="admin" required>
+        </div>
+        <button type="submit" class="btn btn-primary" data-i18n="login.submit">Se connecter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div id="appContainer" class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-badge">MM</div>
+        <div>
+          <h3>MyManager</h3>
+          <div style="font-size:12px; opacity:.85; margin-top:2px;">Backoffice</div>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li><a href="#dashboard" class="nav-link active" data-page="dashboard"><i class="fas fa-chart-line"></i><span data-i18n="menu.dashboard">Tableau de bord</span></a></li>
+        
+        <li><a href="#products" class="nav-link" data-page="products"><i class="fas fa-box"></i><span data-i18n="menu.products">Produits</span></a></li>
+        <li><a href="#orders" class="nav-link" data-page="orders"><i class="fas fa-shopping-cart"></i><span data-i18n="menu.orders">Commandes</span></a></li>
+        <li><a href="#customers" class="nav-link" data-page="customers"><i class="fas fa-user-friends"></i><span data-i18n="menu.customers">Clients</span></a></li>
+        <li><a href="#invoices" class="nav-link" data-page="invoices"><i class="fas fa-file-invoice"></i><span data-i18n="menu.invoices">Factures</span></a></li>
+      </ul>
+    </aside>
+
+    <nav class="navbar">
+      <div>
+        <h2 id="pageTitle">Dashboard</h2>
+      </div>
+
+      <div class="navbar-right">
+        <div class="pill">
+          <i class="fa-solid fa-magnifying-glass" style="color: var(--muted)"></i>
+          <input id="globalSearch" type="text" placeholder="Search..." data-i18n-placeholder="global.search">
+        </div>
+
+        <div class="lang-selector">
+          <button class="lang-btn" id="langBtn"><i class="fas fa-globe"></i><span id="currentLang">FR</span></button>
+          <div class="lang-dropdown" id="langDropdown">
+            <a href="#" data-lang="fr">Français</a>
+            <a href="#" data-lang="en">English</a>
+            <a href="#" data-lang="ar">العربية</a>
+          </div>
+        </div>
+
+        <button class="btn-logout" id="logoutBtn" data-i18n="logout">Déconnexion</button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div id="pageRoot"></div>
+    </main>
+  </div>
+
+  <!-- MODAL (Add/Edit) -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">Modal</h3>
+        <button class="modal-close" onclick="app.closeModal()">&times;</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
